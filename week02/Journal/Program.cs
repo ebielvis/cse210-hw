@@ -1,19 +1,3 @@
-// Journal Program
-// Files included in this single document (place each into its own file when you add to your project):
-// - Entry.cs
-// - Journal.cs
-// - PromptGenerator.cs
-// - Program.cs
-
-
-
-
-
-
-
-// ==================================================
-// File: Program.cs
-// ==================================================
 using System;
 using System.Collections.Generic;
 
@@ -21,14 +5,6 @@ namespace JournalApp
 {
     class Program
     {
-        /*
-         * W02 Project: Journal Program
-         *  - Multi-line entries: When writing a new entry you can type multiple lines. Finish the entry
-         *    by pressing ENTER on an empty line.
-         *  - Encapsulation & Abstraction: The design follows the class diagram used in the course (Journal,
-         *    Entry, PromptGenerator, Program). Save/Load logic is kept inside Journal.
-         */
-
         static void Main(string[] args)
         {
             var journal = new Journal();

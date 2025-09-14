@@ -1,6 +1,3 @@
-// ==================================================
-// File: Journal.cs
-// ==================================================
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,7 +8,6 @@ namespace JournalApp
     public class Journal
     {
         private List<Entry> _entries = new List<Entry>();
-        // A separator unlikely to appear in normal text. We still sanitize fields on save.
         private const string Separator = "~|~";
 
         public void AddEntry(Entry newEntry)
@@ -33,7 +29,7 @@ namespace JournalApp
             }
         }
 
-        // Save to a plain text file using a custom separator, or to JSON if the filename ends with .json
+    
         public void SaveToFile(string filename)
         {
             if (string.IsNullOrWhiteSpace(filename)) throw new ArgumentException("Filename is required.");
@@ -50,7 +46,6 @@ namespace JournalApp
                 {
                     foreach (var e in _entries)
                     {
-                        // Replace separator if it appears in the content to avoid corrupting the file.
                         string date = (e.Date ?? string.Empty).Replace(Separator, " ");
                         string prompt = (e.PromptText ?? string.Empty).Replace(Separator, " ");
                         string text = (e.EntryText ?? string.Empty).Replace(Separator, " ");
@@ -63,7 +58,6 @@ namespace JournalApp
             Console.WriteLine($"Journal saved to {filename}");
         }
 
-        // Load either from a custom-separated text file or a JSON file.
         public void LoadFromFile(string filename)
         {
             if (string.IsNullOrWhiteSpace(filename)) throw new ArgumentException("Filename is required.");
@@ -93,13 +87,11 @@ namespace JournalApp
                 var loaded = new List<Entry>();
                 foreach (var line in lines)
                 {
-                    // Use string[] overload so we can split by a multi-character separator.
                     var parts = line.Split(new string[] { Separator }, StringSplitOptions.None);
                     if (parts.Length >= 3)
                     {
                         string date = parts[0];
                         string prompt = parts[1];
-                        // The rest of the parts (from index 2) are part of the text — join them back.
                         string text = parts.Length == 3 ? parts[2] : string.Join(Separator, parts, 2, parts.Length - 2);
                         loaded.Add(new Entry(date, prompt, text));
                     }
