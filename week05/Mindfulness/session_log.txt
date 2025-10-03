@@ -1,0 +1,22 @@
+=== Session Log ===
+Date: 10/3/2025 5:39:41 PM
+Activity: Breathing Activity
+Duration: 45 seconds
+Details: Relaxed breathing completed.
+--------------------
+
+=== Session Log ===
+Date: 10/3/2025 5:40:19 PM
+Activity: Reflection Activity
+Duration: 15 seconds
+Details: Reflected on: Think of a time you showed kindness to yourself.
+--------------------
+
+=== Session Log ===
+Date: 10/3/2025 5:40:46 PM
+Activity: Listing Activity
+Duration: 10 seconds
+Details: Prompt: List as many things as you can that make you happy.
+Responses: games, anime, movies, books
+--------------------
+
